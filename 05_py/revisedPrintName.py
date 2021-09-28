@@ -7,7 +7,9 @@
 # Our trio first shared with each other our programs and explained our approaches.
 # Theodore and Michelle both utilized the approach of creating a list within the python program and then,
 # by generating a random number, print a soft dev student’s name from either or combined lists.
-# Lucas went the extra step reading a text file with a list of names for easier name input.
+# Lucas went the extra step reading a text file with a list of names for easier name input. We amalgamated
+# our code by taking the text file input technique from Lucas's code and user inputted
+# period from Theodore and my code.
 # DISCOVERIES
 # We learned about how to read an inputted file (from Lucas’s code)
 # QUESTIONS (only if you have them)
@@ -17,7 +19,7 @@ import sys
 #used for sys.argv
 from random import randrange
 
-def read_names(filename: str):
+def read_names(filename):
     """Reads a text file containing a list of names, where each line contains
     one name, and returns a list of the names."""
     file_contents = ""
@@ -43,13 +45,13 @@ def main():
 
     a = input("Enter 1 or 2 for a softdev student's name from periods 1 or 2 respectively. Enter 3 for a random name from either: ")
 
-    if (a == "1"):
+    if (a == "1" or a == 1):
         pd1_index = randrange(len(pd1))
         print(pd1[pd1_index])
-    elif (a == "2"):
+    elif (a == "2" or a == 2):
         pd2_index = randrange(len(pd2))
         print(pd2[pd2_index])
-    elif (a == "3"):
+    elif (a == "3" or a == 3):
         name_index = randrange(len(names))
         print(names[name_index])
     else:
