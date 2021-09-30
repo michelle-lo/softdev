@@ -1,4 +1,4 @@
-# Our approach to assignment #6
+# Our Approach to Assignment #6
 
 Lone Devos - Michelle Lo, Theodore Fahey, Rayat Roy 
 
