@@ -18,7 +18,7 @@ We used lists in two different ways. Firstly, our variable `spamreader` is a lis
 In our alternative function **randChoices**, we also used lists in the method `random.choices`. `jobList` is a list of the dictionary `jobs` keys while `percentages` is a list of each of the occupations' percentages.
 
 ## Basics of github-flavoured markdown
-Thanks to the resources contributed to the soft dev discussion forum, our trio were able to taste a bit of github-flavoured markdown and and utilize several markdown tools to format our README.md file. For example, in order to format headings, we used `#` of varying lengths for the different sized headings. We also used the `` character to format code. Lastly, we used the `*` char to bolden our words.
+Thanks to the resources contributed to the soft dev discussion forum, our trio was able to get a taste of github-flavoured markdown and and utilize several markdown tools to format our README.md file. For example, in order to format headings, we used `#` of varying lengths for the different sized headings. We also used the `` character to format code. Lastly, we used the `*` char to bolden our words.
 
 ```
 ### Headings will look like this
