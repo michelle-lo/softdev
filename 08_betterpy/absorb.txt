@@ -1,0 +1,18 @@
+(M+I+R) Michelle Lo + Ishraq Mahid + Renggeng Zheng
+SoftDev
+K08 -- Learning from each other’s work
+2021-09-30
+
+Questions
+How does debug work and how can we use it?
+Is there a “best” solution?
+What’s the best solution for larger lists of values? Less memory?
+
+Comments
+Renggeng uses DEBUG to ease his progamming.
+We all have identical, or at least very similar strategies for weighted probabilities.
+Reng notes that tracker and s > r is different from s >= r because it reduces the possibility of rolling a number like 99.8.
+
+Concerns
+There probably could’ve been more commenting on my work.
+Are there any perceived risks with using our “interval” strategy? For example, is it truly random? Does it favor the beginning over the ending?

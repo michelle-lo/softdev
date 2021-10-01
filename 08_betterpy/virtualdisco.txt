@@ -1,0 +1,9 @@
+(M+I+R) Michelle Lo + Ishraq Mahid + Renggeng Zheng
+SoftDev
+K08 -- Virtual Environments
+2021-09-30
+
+As a team, we investigated the different parts of: $ python3 -m venv ~/myherozero
+-m stands for module name and should be followed by said module name (in this case, “venv”)
+venv is a module that creates virtual environments. Virtual environments allow for installed Python interpreter, libraries and scripts to be isolated from other virtual environments for the purpose of not interfering with other projects that might need python.
+~/myherozero creates a directory called myherozero in which our new virtual environment is installed. It is located in the root directory.
