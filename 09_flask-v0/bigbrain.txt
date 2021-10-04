@@ -1,0 +1,21 @@
+[Croc and Kitty/Kitty Crocs] Michelle Lo, Rayat Roy, Print("Hello Kitty"), Zippy Croc
+SoftDev
+K09 -- Simple Path to Greatness/Downloading Flask
+2021-10-04
+
+# Q0: Where have you seen similar syntax in other langs?
+It looks like a function is being called and the output being stored to app, although it's not particularly unique to any certain language, it's very similar to how python initializes its variables.
+
+# Q1: What points of reference do you have for meaning of '/'?
+We've seen '/' when we're dealing with terminal. It might be referring to the root directory.
+This may not actually be directory related since it just ran the website in the same directory I was already in. It also could mean to run it in the current directory.
+
+# Q2: Where will this print to? Q3: What will it print?
+It might print to the file that is supposed to be our website preview. I think it will print whatever flask internally defines __name__ as since we have not defined it.
+Nothing was printed because we did not call the function in the first place. Nothing appears in the end.
+
+# Q3: Will this appear anywhere? How u know?
+Since we don't use the result of hello_world anywhere I don't think it will appear.
+
+# Q4: Where have you seen similar construcs in other languages?
+This definitely seems like a java construct for object oriented programming
