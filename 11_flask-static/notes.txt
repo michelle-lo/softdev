@@ -1,0 +1,12 @@
+Lone Devos: Theodore Fahey, Rayat Roy, Michelle Lo
+SoftDev
+K11 -- Flask thingies
+2021-10-06
+
+Predictions:
+foo + foo.html
+Copying and pasting the link in the foo document doesn't seem to do anything. We predict that by running flask, we will arrive at some result involving foo. 
+
+Renaming to foo to foo.txt allows us to open foo on a web browser.
+
+ 
