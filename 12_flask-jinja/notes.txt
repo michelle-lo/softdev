@@ -1,0 +1,16 @@
+Lone Devos
+heading
+
+app.py
+#Q0: What happens if you remove render_template from this line?
+It won't render the template (test_tmplt() will return an error if we were to remove render_template.
+
+#Q1: Can all of your teammates confidently predict the URL to use to load this page?
+It will load as https://localhost:5000/path/my_foist_template
+Edit: https://localhost:5000/my_foist_template (no path!)
+
+#Q2: What is the significance of each argument?
+The first arg ("model_tmplt.html" selects the template file, foo = "foooo" makes it the title of the website, collection makes the collection variable in the model_tmplt equal to the coll list defined in app.py.
+
+Questions
+What does "render" mean?
