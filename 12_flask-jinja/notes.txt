@@ -1,9 +1,12 @@
-Lone Devos
-heading
+Lone Devos: Rayat Roy, Theodore Fahey, Michelle Lo
+SoftDev
+K12 -- How templates work in flask and how @app.route creates a new page with a new link
+2021-10-7
 
 app.py
 #Q0: What happens if you remove render_template from this line?
 It won't render the template (test_tmplt() will return an error if we were to remove render_template.
+Result: The error is only returned if we go to the /my_foist_template link, as the default webpage function does not use a render_template function. The webpage itself displays the error.
 
 #Q1: Can all of your teammates confidently predict the URL to use to load this page?
 It will load as https://localhost:5000/path/my_foist_template
