@@ -1,0 +1,18 @@
+Your API key for mlo20@stuy.edu is:
+w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK
+
+You can start using this key to make web service requests. Simply pass your key in the URL when making a web request. Here's an example:
+
+https://api.nasa.gov/planetary/apod?api_key=w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK
+
+What is a Rest API?
+transmits data back after receiving an https requests
+HTML, XML, JSON
+key: limited resources
+
+.geturl
+.info
+.read
+
+.loads
+.dumps
