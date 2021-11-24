@@ -1,18 +1,16 @@
-Your API key for mlo20@stuy.edu is:
-w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK
+Team FF: Ishraq Mahid and Michelle Lo
+SoftDev
+K19 - A RESTful Journey Skyward/APIs
+November 24th, 2021
 
-You can start using this key to make web service requests. Simply pass your key in the URL when making a web request. Here's an example:
-
-https://api.nasa.gov/planetary/apod?api_key=w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK
-
+Questions/Comments/Discoveries:
 What is a Rest API?
-transmits data back after receiving an https requests
-HTML, XML, JSON
-key: limited resources
+It transmits data back after receiving an https request.
 
-.geturl
-.info
-.read
+What's the purpose of obtaining a key?
+It prevents a potential server crash by making too many requests at one time.
 
-.loads
-.dumps
+Urllib certificate verify mac error
+MacOS may prevent the usage of Urllib due to this error: SSL: CERTIFICATE_VERIFY_FAILED. This can be solved by installing the certifi package of certificates. Simply run the following
+commands in your virtual environment: pip3 install certifi and /Applications/Python\ 3.9/Install\ Certificates.command.
+Source: https://piazza.com/class/kv0wqn7faux3ye?cid=63

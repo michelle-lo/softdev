@@ -1,24 +1,28 @@
-# Clyde 'Thluffy' Sinclair
+# Team FF: Ishraq Mahid and Michelle Lo
 # SoftDev
-# Oct 2021
+# K19 - A RESTful Journey Skyward/APIs
+# November 24th, 2021
 
-# DEMO
-# basics of /static folder
-
-from flask import Flask
+from flask import Flask, render_template
 import urllib.request, json
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    x = urllib.request.urlopen("https://api.nasa.gov/planetary/apod?api_key=w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK")
-    # http = urllib.PoolManager()
-    # r = http.request('GET', 'https://api.nasa.gov/planetary/apod?api_key=w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK')
-    #print(x.read())
-    dict = json.loads(x.read())
-    print(dict)
-    
-    return ""
+def NASA_key():
+    page = urllib.request.urlopen("https://api.nasa.gov/planetary/apod?api_key=w3dlvp3pigesf9dslufCffVjJUJAoglsX64cF5lK") #opens URL
+    dict = json.loads(page.read()) #reads and loads JSON into a python dictionary
+    img = dict.get('url') #obtain picture URL through dictionary
+    expl = dict.get('explanation') #obtain explanation of image
+
+    # print(dict)
+    # print(dict.get('explanation'))
+    # print(dict.get('img'))
+
+    return render_template(
+        'main.html',
+        image = img,
+        explanation = expl
+    )
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change
