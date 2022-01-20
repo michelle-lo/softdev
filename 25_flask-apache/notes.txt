@@ -1,0 +1,16 @@
+Michelle Lo, Tami Takada, Shyne Choi, Tina Nguyen
+SoftDev
+K25 -- Apache, Jump On It - Deploy a Flask app w/Apache
+2022-01-18
+time spent: 1.5
+
+- instead of running sudo apt-get install python-pip, you might have to run sudo apt-get install python3-pip
+- there may be python version issues
+
+- "No module named Flask" error -> make sure that you have the right apache2 library (sudo apt-get install libapache2-mod-wsgi-py3)
+- in your app.py files, make sure that you run 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
+
+-running app files:
+after cloning your repo and cd'ing into the right directory, create and enable a virtual environment. install flask and other necessary tools. before running, make sure that you allow traffic on port 5000 (sudo ufw allow 5000).
