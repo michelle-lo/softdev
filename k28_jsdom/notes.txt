@@ -7,7 +7,7 @@ DISCO
 -----------------------------------------------------------------
 * objects are similar to dictionaries and can be used the same way.
 * varibles defined within a function only exists with the scope of that function.
-* the order in which the style sheet defines the color classes is the order of "importance" the color is.
+* the order in which the style sheet defines the color classes is the order of "importance" of each color
 * the color that appears later in the style sheet overrides the previous color and comes up on top as the alpha color!!
 * you can create an object within another object
 * you can also create another function within an object (only exists within the scope of the object)
