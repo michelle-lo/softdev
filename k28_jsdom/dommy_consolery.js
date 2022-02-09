@@ -72,7 +72,6 @@ var red = function() {
 red() //will turn the first and last elements red
 //li elements whose class lists are either empty or have red at the end will be red.
 //there seems to be an order of importance for colors as defined in the style sheet: red < green < blue.
-//the color that appears later in the style sheet overrides the previous color and comes up on top as the alpha color!!
 
 
 var stripe = function() {
@@ -89,5 +88,43 @@ stripe()
 
 //insert your implementations here for...
 // FIB
+let fib = function(n){
+    if(n <= 1){
+      return n;
+    }
+    return fib(n-1) + fib(n-2);
+  };
+
 // FAC
+var fact = function(n){
+    if(n == 0){
+    return 1;
+    }
+    return fact(n-1) * n;
+};
+
 // GCD
+let gcd = function (a, b) {
+    if (a == 0) return b;
+    if (b == 0) return a;
+    while (1) {
+        if (b > a) {
+            b %= a;
+        } else {
+            a %= b;
+        }
+        if (a == 0) return b;
+        if (b == 0) return a;
+    }
+}
+console.log(gcd(12, 6));
+
+
+let fibEx = fib(10);
+addItem("The 10th fibonacci number is " + fibEx);
+
+let factEx = fact(10);
+addItem("10! = " + factEx);
+
+let gcdEx = gcd(990, 99);
+addItem("GCD of 990 and 99 is " + gcdEx);
