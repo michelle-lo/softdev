@@ -17,4 +17,5 @@ DISCO
 QCC
 -----------------------------------------------------------------
 * Why is an anonymous fxn called an anonymous function?
+* This might be helpful: http://software.hixie.ch/utilities/js/live-dom-viewer/
 =================================================================
