@@ -135,14 +135,23 @@ let fibIndex = 1;
 let fibButton = function() {
   let dasbut = document.getElementById("b");
   let fibDisplay = function(){
-    addListItem("fiblist", fib(fibIndex))
+    addListItem("fiblist", fib(fibIndex));
     fibIndex++;
   }
   dasbut.addEventListener('click', fibDisplay);
 }
 fibButton()
 
-
+let a = Math.floor(Math.random() * 20);
+let b = Math.floor(Math.random() * 20);
+let gcdButton = function() {
+  let dasbut = document.getElementById("bgcd");
+  let gcdDisplay = function(){
+    addListItem("gcdlist", "gcd of " + a + " and " + b + " is " + gcd(a, b));
+  }
+  dasbut.addEventListener('click', gcdDisplay);
+}
+gcdButton()
 
 let fibEx = fib(10);
 addItem("The 10th fibonacci number is " + fibEx);
