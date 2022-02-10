@@ -133,20 +133,21 @@ button click triggers its function, and causes the result to be displayed on the
 let fibIndex = 1;
 
 let fibButton = function() {
-  let dasbut = document.getElementById("b");
+  let dasbut = document.getElementById("bfib");
   let fibDisplay = function(){
-    addListItem("fiblist", fib(fibIndex));
+    addListItem("fiblist", "fib(" + fibIndex + ") = " + fib(fibIndex));
     fibIndex++;
   }
   dasbut.addEventListener('click', fibDisplay);
 }
+
 fibButton()
 
-let a = Math.floor(Math.random() * 20);
-let b = Math.floor(Math.random() * 20);
 let gcdButton = function() {
   let dasbut = document.getElementById("bgcd");
   let gcdDisplay = function(){
+    let a = Math.floor(Math.random() * 20);
+    let b = Math.floor(Math.random() * 20);
     addListItem("gcdlist", "gcd of " + a + " and " + b + " is " + gcd(a, b));
   }
   dasbut.addEventListener('click', gcdDisplay);
