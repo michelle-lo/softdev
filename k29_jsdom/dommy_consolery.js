@@ -1,7 +1,7 @@
-// Team HAM :: Hebe Huang, Andrew Juang, Michelle Lo
+// Team ME :: Michelle Lo and Eric Guo
 // SoftDev pd2
-// K28 -- Getting more comfortable with the dev console and the DOM
-// 2022-02-08t
+// K29 -- DOMfoolery++
+// 2022-02-10
 // --------------------------------------------------
 
 
@@ -140,14 +140,24 @@ let fibButton = function() {
   }
   dasbut.addEventListener('click', fibDisplay);
 }
-
 fibButton()
+
+let factIndex = 0;
+let factButton = function() {
+  let dasbut = document.getElementById("bfact");
+  let factDisplay = function(){
+    addListItem("factlist", factIndex + "! = " + fact(factIndex));
+    factIndex++;
+  }
+  dasbut.addEventListener('click', factDisplay);
+}
+factButton()
 
 let gcdButton = function() {
   let dasbut = document.getElementById("bgcd");
   let gcdDisplay = function(){
-    let a = Math.floor(Math.random() * 20);
-    let b = Math.floor(Math.random() * 20);
+    let a = Math.floor(Math.random() * 100);
+    let b = Math.floor(Math.random() * 100);
     addListItem("gcdlist", "gcd of " + a + " and " + b + " is " + gcd(a, b));
   }
   dasbut.addEventListener('click', gcdDisplay);
