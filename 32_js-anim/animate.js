@@ -89,35 +89,46 @@ var stopIt = () => {
 };
 
 
-let dvd = () => {
-  clear();
-  let myImage = new Image(100, 50);
-  myImage.src = 'logo_dvd.jpg';
-  document.body.appendChild(myImage);
-  function getRandomInt(max) {
+let myImage = new Image(100, 50);
+myImage.src = 'logo_dvd.jpg';
+  //document.body.appendChild(myImage);
+  /* function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
-  let dx = getRandomInt(c.clientWidth);
-  let dy = getRandomInt(c.clientHeight);
-  ctx.drawImage(myImage, dx, dy, 100, 50); //adjust max of random to acc borers
+  } */
+
+let xVel = -1;
+let yVel = 3;
+let dx = Math.floor(Math.random() * (c.width - myImage.width));
+let dy = Math.floor(Math.random() * (c.height - myImage.height));
 
 
-  requestID = window.requestAnimationFrame(dvd);
-  var collide = false;
-  if (dx === c.clientWidth || dy === c.clientHeight || dx === 0 || dy === 0) {
-    // dx *= -1;
-    collide = true;
-  }
+let dvd = () => {
 
-  if (collide) {
-      dx *= -1;
-  }
+  console.log("DVD!");
+  requestID = window.cancelAnimationFrame(requestID);
+  clear();
+  ctx.beginPath();
+
+  ctx.drawImage(myImage, dx, dy, 100, 50); 
+
+
+  if (dx >= c.width - myImage.width || dx <= 0) {
+		xVel *= -1;
+	}
+
+  if (dy >= c.height - myImage.height || dy <= 0) {
+		yVel *=-1;
+	}
+
+  dx += xVel;
+  dy += yVel;
 
   // ctx.arc(c.clientWidth/2, c.clientHeight/2, radius, 0, 360);
-  ctx.fill();
+  requestID = window.requestAnimationFrame(dvd);
+  //ctx.fill();
 
 }
-dvd();
+//dvd();
 
 
 dotButton.addEventListener("click", drawDot);

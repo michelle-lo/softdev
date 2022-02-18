@@ -1,0 +1,91 @@
+Team MJ :: Michelle Lo, Josephine Lee
+SoftDev pd2
+K32 -- More Moving Parts
+2022-02-18f
+
+DISCO
+-----------------------------------------------------------------
+* New functions learned!
+Image(): creates new image object. [myImage = new Image(width, height)]
+IMAGE_OBJ.src: takes in the name of the file[myImage.src = 'logo_dvd.jpg']
+CANVAS_CONTEXT.drawImage(): draws element into a canvas. takes dx and dy, x and y coordinates from which the image should be drawn. (0, 0) represents the top left edge.
+Math.random(): random
+Math.floor(): rounds number to the largest integer less than or equal to the number.
+
+* Vectors...
+When object collides, their velocity is negated! (eg when object collides with the es with the canvas's right edge, its x-component of the velocity is negated, causing it to go the opposite direction.)
+=================================================================
+
+Team HAM :: Hebe Huang, Andrew Juang, Michelle Lo
+SoftDev pd2
+K31 -- Paint Paint Paint...
+2022-02-16t
+
+DISCO
+-----------------------------------------------------------------
+requestID
+	- global variable
+
+window.requestAnimationFrame(callback)
+	- Tells the browser to preform the callback function and prepare the next frame in the animation
+	- Should be called before each repaint
+	- Uses recursion to continuously update the animation
+	- Returns/updates requestID, which is used to stop the animation in window.cancelAnimationFrame().
+
+window.cancelAnimationFrame(requestID)
+	- Stops the animation
+=================================================================
+
+Team ME :: Michelle Lo and Eric Guo
+SoftDev pd2
+K29 -- DOMfoolery++
+2022-02-10
+
+DISCO
+-----------------------------------------------------------------
+* New functions learned!
+dasbut.addEventListener(‘click’, fxnName)
+
+document.createElement(<HTML Tag Name>)
+element.setAttribute(<name>, <value>)
+element.getAttribute(<name>)
+
+element.remove()
+element.innerHTML
+element.appendChild(<Element>)
+element.addEventListener(<Event>, <Function>)
+
+* remember to call the function for the button!
+* be careful on duplicating button ID names in order to prevent errors in using the same buttons for different functions
+* fib(3), fact(193013), etc. will not work as a parameter for addEventListener(a, b).
+* for events for addEventListener, check the DOM API (bit.ly/api_dom)!
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* Can this be done more efficiently?
+* Make sure you have your console on... and pay close attention to the error log!
+=================================================================
+
+
+Team HAM :: Hebe Huang, Andrew Juang, Michelle Lo
+SoftDev pd2
+K28 -- Getting more comfortable with the dev console and the DOM
+2022-02-08t
+
+DISCO
+-----------------------------------------------------------------
+* objects are similar to dictionaries and can be used the same way.
+* varibles defined within a function only exists with the scope of that function.
+* the order in which the style sheet defines the color classes is the order of "importance" of each color
+* the color that appears later in the style sheet overrides the previous color and comes up on top as the alpha color!!
+* you can create an object within another object
+* you can also create another function within an object (only exists within the scope of the object)
+* you can use "let" instead of "var"
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* Why is an anonymous fxn called an anonymous function?
+* This might be helpful: http://software.hixie.ch/utilities/js/live-dom-viewer/
+=================================================================
