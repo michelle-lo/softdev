@@ -1,0 +1,17 @@
+Michelle Lo
+SoftDev
+K34 -- Another DB Perspective
+2022-04-27
+
+Genkina's Intro Video: https://www.youtube.com/watch?v=3GHZd0zv170
+
+* What is RBBMS?
+* Develop application + define data model + improve app + improve data model
+* Iterative design
+* Linking: one-to-one, one-to-many (array), many-to-many (arrays on either side) (eg entities and relationships in a blog)
+* To link or embed(and link)?
+* Update schema
+* Tabular approach: new document for every reading
+* Document approach: bucket pattern, stores small, related data items, reduces index sees, speed of retrieval reduced
+* Computed Pattern: compute as it reads -> updating database and update summary records too (caching pattern), less work (like you're multitasking)
+* Simpler models: embedding, few patterns. Complex Models:  embedding and linking, many patterns.
