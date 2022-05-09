@@ -1,0 +1,150 @@
+Another DB Perspective
+Michelle Lo
+SoftDev
+
+K34 -- Intro Video with Data Modeling
+2022-04-27
+
+Genkina's Intro Video: https://www.youtube.com/watch?v=3GHZd0zv170
+
+* What is RBBMS?
+* Develop application + define data model + improve app + improve data model
+* Iterative design
+* Linking: one-to-one, one-to-many (array), many-to-many (arrays on either side) (eg entities and relationships in a blog)
+* To link or embed(and link)?
+* Update schema
+* Tabular approach: new document for every reading
+* Document approach: bucket pattern, stores small, related data items, reduces index sees, speed of retrieval reduced
+* Computed Pattern: compute as it reads -> updating database and update summary records too (caching pattern), less work (like you're multitasking)
+* Simpler models: embedding, few patterns. Complex Models:  embedding and linking, many patterns.
+
+***
+
+K35 -- Chapter 1: What is MongoDB?
+2022-05-03
+
+Chapter 1: https://university.mongodb.com/mercury/M001/2022_April_26/chapter/Chapter_1_What_is_MongoDB_/lesson/5f32c8a304e9ffbb03b169ac/lecture
+
+What is MongoDB Database?
+* A database, structured in an organized way but no rows and columns or tables.
+* NoSQL documentDB. Data is stored as documents. Stored in collections.
+* Collection - an organized store of documents in MongoDB usually with common fields between documents. There can be many collections per database and many documents per collection.
+
+What is a Document in MongoDB?
+* Organize and store data as a set of friend-value pairs eg "title" : "Team Lead"
+* Collection: org store of documents
+
+Document - a way to organize and store data as a set of field-value pairs.
+
+Field - a unique identifier for a datapoint.
+
+Value - data related to a given identifier.
+
+Collection - an organized store of documents in MongoDB, usually with common fields between documents. There can be many collections per database and many documents per collection.
+
+What is MongoDB Atlas?
+* Data will remain intact. Clusters: group of servers that stores your data.
+* Alas: manage cluster creation.
+
+Replica Set - a few connected machines that store the same data to ensure that if something happens to one of the machines the data will remain intact. Comes from the word replicate - to copy something.
+
+Instance - a single machine locally or in the cloud, running a certain software, in our case it is the MongoDB database. (part of the replica set)
+
+Cluster - group of servers that store your data.
+
+username: m001-student
+password: m001-mongodb-basics
+
+***
+
+K36 -- Chapter 2: Importing, Exporting, and Querying Data
+2022-05-03
+
+Chapter 2: https://university.mongodb.com/mercury/M001/2022_April_26/chapter/Chapter_2_Importing_Exporting_and_Querying_Data/lesson/5f356aeb32339e734c9da867/lecture
+
+How does MongoDB store data?
+* working in JSON (starts and ends in {}, key and value sep by :, key:value sep by comma, keys surrounded by "") (keys -> fields in MongoDB)
+* subdocuments
+* BSON (binary JSON) - gap between binary rep and JSON format, high purpose
+* MongoDB stores data in BSON, view in JSON
+
+Importing and Exporting Data
+* Stored BSON vs Viewed JSON
+* JSON: mongoimport, mongoexport
+* BSON: mongorestore, mongodump
+* mongodump: exprorts data in BSON (not easy to read)
+* URI string: uniform resource identifier.
+* mongorestore --uri "<atlas cluster URI>"
+	       --drop dump (drop -> removes existing database)
+* mongoimport --uri "<atlas cluster URI>"
+	      --drop=<filename>.json
+-> imports data in JSON 
+
+mongoimport can import data from JSON, and other supported non BSON formats. Can add a collection to the Atlas cluster.
+mongodump exports data in its raw BSON form.
+mongorestore imports data from a mongodump created BSON format.
+mongoexport can export data from JSON.
+
+Data Explorer
+* query data using the GUI.
+* must use valid JSON
+
+Find Command
+* admin: tracks existing users in db
+* show dbs -> shows databases in the clusters
+1. use sample_training
+2. show collections
+db.{collection_name}.find( query )
+
+* it : iterates through a cursor
+* cursor: pointer to a result set of a query
+* pointer: direct address to a memory location
+ 
+db.zips.find({"state": "NY"}).count() -> counts the documents with state of NY
+db.zips.find({"state": "NY", "city": "ALBANY"}).pretty() -> easier to read
+
+show dbs, show collections, find(), count(), pretty()
+
+***
+
+K37 -- Chapter 3: Creating and Manipulating Documents
+2022-05-09
+
+Inserting New Documents - ObjectId
+* every document must have a unique _id value.
+* ObjectId() -> is the default value (unless stated in parentheses)
+
+Inserting New Documents - insert() and errors
+* --drop "collection" - drops the collection
+* use _database_, db._collection_.findOne() -> one random document
+* db._collection_.insert(^^)
+* object id is added automatically when inserting document. mongoldb allows you to add identical documents as long as their _id values are different.
+
+
+Inserting New Documents - insert() order
+* when many docs are inserted, they are inserted in the order of the array -> duplicate docs after the first one will not be added, others with unique ids will be added
+* db.inspections.insert([{ "_id": 1, "test": 1 },{ "_id": 1, "test": 2 },
+                       { "_id": 3, "test": 3 }],{ "ordered": false }) 
+-> ordered: true --> all duplicate documents are not inserted nor are others inserted (the process is halted)
+
+Updating Documents - Data Explorer
+* MongoDB has a flexible data model, which means that you can have fields that contain documents, or arrays as their values.
+
+Updating Documents - mongo shell
+* updateOne() - only first found will be updated, updateMany() - update all docs that match query, findOne(), find()
+* $inc -> increment value by spec value
+* db.zips.updateMany({ "city": "HUDSON" }, { "$inc": { "pop": 10 } })
+* $set - sets value
+* db.zips.updateOne({ "zip": "12534" }, { "$set": { "pop": 17630 } }) 
+* $push element -> add element
+* db.grades.updateOne({ "student_id": 250, "class_id": 339 },
+                    { "$push": { "scores": { "type": "extra credit",
+                                             "score": 100 }
+                                }
+                     })
+* $set can add new fields if they are not already created
+
+Deleting Documents and Collections
+* deleteOne() -> query by using "_id" value, deleteMany()
+* db.<collection>.drop()
+* removing all collections also removes the database
